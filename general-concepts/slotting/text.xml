@@ -170,8 +170,47 @@ may be appropriate.
 </p>
 
 <p>
+Depending on the level of incompatibility, a separate package may be
+more appropriate to avoid breaking scripts, cronjobs, and so on.
+</p>
+
+<p>
+For example, app-containers/docker-compose in <c>SLOT="0"</c> installed a
+standalone executable, while <c>SLOT="2"</c> installed a helper outside of
+<c>PATH</c> which is no longer accessible to scripts. A separate package
+may be more appropriate for such a case.
+</p>
+
+<p>
 An <c>eselect</c> module is often made available for these cases, though
 ebuilds normally shouldn't depend on its use.
+</p>
+</body>
+</subsection>
+
+<subsection>
+<title>Separate package</title>
+<body>
+
+<p>
+If a prospective newly-added slot would have a
+<uri link="::general-concepts/dependencies/#blockers">blocker</uri>
+(possibly because of file collisions) on another slot, using the same slot
+or creating a new package may be more suitable instead. Users generally
+expect slots to imply each can be installed in parallel.
+</p>
+
+<p>
+Such new packages are usually in the same category and have the same
+package name but with a number or other suffix.
+</p>
+
+<p>
+An advantage of a separate package is that maintainers won't be tempted
+(or prompted by <c>pkgcheck</c>) to clean up old versions which are shadowed
+by newer ebuilds. A similar concern exists for stabilization where tooling
+will prompt developers to stabilize a new version when both the old and new
+versions may be intended to co-exist indefinitely.
 </p>
 </body>
 </subsection>
