@@ -160,6 +160,16 @@ to be available.
 </p>
 
 <p>
+New slots are usually incompatible with older versions in some regard like
+UI, syntax, behaviour. A new version of a slotted executable could suddenly
+break users' workflows, so a
+<uri link="::general-concepts/news/">news item</uri>
+or
+<uri link="::ebuild-writing/messages/">ewarn</uri>
+may be appropriate.
+</p>
+
+<p>
 An <c>eselect</c> module is often made available for these cases, though
 ebuilds normally shouldn't depend on its use.
 </p>
