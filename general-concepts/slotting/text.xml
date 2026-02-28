@@ -160,6 +160,13 @@ to be available.
 </p>
 
 <p>
+For autotools-based packages, the <c>--program-prefix</c>,
+<c>--program-suffix</c>, and <c>--program-transform-name</c>
+<uri link="https://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/html_node/Transformation-Options.html">
+options</uri> options may be helpful.
+</p>
+
+<p>
 New slots are usually incompatible with older versions in some regard like
 UI, syntax, behaviour. A new version of a slotted executable could suddenly
 break users' workflows, so a
