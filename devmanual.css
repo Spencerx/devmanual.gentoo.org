@@ -13,6 +13,10 @@ dd {
     margin-left: 2em;
 }
 
+/* suppress the vertical space in <li> with a single <p> */
+li > p { margin-bottom: 5px; }
+li > p:only-child { margin-bottom: 0; }
+
 caption, p.caption {
     font-weight: bold;
 }
