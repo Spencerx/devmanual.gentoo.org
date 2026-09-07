@@ -54,7 +54,7 @@ for manpage; do
 		-e 's:<TR VALIGN=top>:<TR>:g' \
 		-e '/<A NAME/{N;s:<A NAME=\(.*\)>.*</A>\(.*<H[1-6]\)>:\2 ID=\1>:}' \
 		>> "${output}" || exit
-	printf '%s\n%s' '</div></main>' "${footer}" >> "${output}" || exit
+	printf '%s\n%s\n' '</div></main>' "${footer}" >> "${output}" || exit
 done
 
 # Local Variables:
